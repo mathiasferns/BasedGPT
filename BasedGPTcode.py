@@ -44,7 +44,6 @@ ASSISTANT_MESSAGE_STYLE = f"""
     padding: 10px;
 """
 #commands
-import streamlit as st
 
 col1, col2 = st.columns(2)
 
@@ -94,10 +93,27 @@ with st.sidebar.container():
         unsafe_allow_html=True
     )
 
+#logic
+#def translate(text):
+ #   trans_text          #add the translated text
+
 
 # Main content
 chat_history = []
+button=st.button("Translation")
 message_input = st.text_input("Welcome " + user_name)
+
+if button:
+    col3,col4=st.columns(2)
+    col3.header("Original Text")
+    col3.write(message_input)
+
+    col4.header("Translated Text")
+  #  trans_text=    assign the translated text
+    col4.write("The translation")
+
+
+    
 
 if message_input:
     # Add user message to chat history
